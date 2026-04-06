@@ -41,8 +41,8 @@ In the second stage, I extended the architecture to improve availability:
 ### EC2 Instances
 ![EC2](Screenshots/ec2.png)
 
-### Security Group
-![Security Group](Screenshots/load-balancer)
+### Load Balancer
+![Load Balancer](Screenshots/load-balancer.png)
 
 ## What I Learned
 
