@@ -36,13 +36,13 @@ In the second stage, I extended the architecture to improve availability:
 ## Screenshots
 
 ### Website
-![Website](screenshots/website.png)
+![Website](Screenshots/website.png)
 
 ### EC2 Instances
-![EC2](screenshots/ec2.png)
+![EC2](Screenshots/ec2.png)
 
 ### Security Group
-![Security Group](screenshots/load-balancer)
+![Security Group](Screenshots/load-balancer)
 
 ## What I Learned
 
