@@ -1,55 +1,59 @@
-# AWS EC2 Nginx Static Website
+# AWS EC2 Nginx Website (Single Server to Load Balanced Architecture)
 
-This project shows how I deployed a static website on an AWS EC2 instance using Ubuntu and Nginx.
+This project shows my learning process of deploying a static website on AWS, starting from a single EC2 instance and then improving the setup with a load balanced architecture.
 
-## Project Overview
+## Version 1 - Single Server
 
-In this project, I:
+In the first stage, I created a basic web server:
 
-- Launched an AWS EC2 instance
-- Connected to the server via SSH
-- Used Ubuntu as the server environment
-- Deployed a static HTML website
-- Configured Nginx to serve the website
-- Updated AWS Security Group rules to allow HTTP traffic
-- Made the website publicly accessible through the EC2 public IP
+- Launched an EC2 instance (Ubuntu)
+- Connected using SSH
+- Installed and configured Nginx
+- Deployed a simple static HTML website
+- Enabled public access using Security Groups
 
-## Technologies Used
+## Version 2 - Load Balanced Setup
 
-- AWS EC2
-- Ubuntu
-- Nginx
-- HTML
-- SSH
+In the second stage, I extended the architecture to improve availability:
+
+- Created multiple EC2 instances
+- Configured Nginx on each instance
+- Deployed different HTML responses on each server for testing
+- Created a Target Group and registered the instances
+- Set up an Application Load Balancer (ALB)
+- Configured HTTP listener and routing
+- Used health checks to monitor instance status
+- Debugged issues related to security groups and availability zones
+
+## Architecture Overview
+
+- EC2 instances running Ubuntu
+- Nginx web server
+- Application Load Balancer
+- Target Group with health checks
+- Security Groups for network control
 
 ## Screenshots
 
 ### Website
-![Website](Screenshots/website.png)
+![Website](screenshots/website.png)
 
-### EC2 Instance
-![EC2](Screenshots/ec2.png)
+### EC2 Instances
+![EC2](screenshots/ec2.png)
 
 ### Security Group
-![Security Group](Screenshots/security-group.png)
+![Security Group](screenshots/load-balancer)
 
 ## What I Learned
-- How to launch and access an EC2 instance
-- How to connect to a remote Linux server with SSH
-- How to host a static website with Nginx
-- How Security Groups affect inbound web traffic
-- Basic deployment workflow on AWS
+
+- How to deploy and manage EC2 instances
+- Basic Linux server administration
+- Installing and configuring Nginx
+- Load balancing concepts in AWS
+- Troubleshooting real-world networking issues
+- Understanding Security Groups and traffic flow
+- Basics of high availability design
 
 ## Result
-The static website was successfully deployed and made publicly accessible from the browser using the EC2 public IP address.
 
-## Author
-
-Yusuf
-
-## Project Structure
-
-```text
-.
-├── index.html
-└── README.md
+The final setup successfully distributes incoming traffic across multiple EC2 instances using an Application Load Balancer.
